@@ -46,7 +46,28 @@ Il repository è organizzato in due progetti Eclipse CDT separati:
 3. Selezionare la directory `client-project`
 4. Ripetere i passi 2-3 per `server-project`
 
-### 3. Compilazione su diversi sistemi operativi
+### 3. Configurare il progetto in Eclipse
+
+Dopo aver importato i progetti, è necessario verificare e configurare le impostazioni del compilatore:
+
+#### Verificare il Toolchain
+Per ciascun progetto (client e server):
+1. Click destro sul progetto → `Properties`
+2. Andare in `C/C++ Build → Tool Chain Editor`
+3. Verificare che il **Current toolchain** sia corretto per il proprio sistema operativo:
+   - **Linux**: GCC
+   - **macOS**: GCC
+   - **Windows**: MinGW GCC
+
+#### Solo per Windows: Aggiungere libreria Winsock
+Per compilare su Windows, è necessario linkare la libreria Winsock:
+1. Click destro sul progetto → `Properties`
+2. Andare in `C/C++ Build → Settings`
+3. Selezionare `MinGW C Linker → Libraries`
+4. In **Libraries (-l)**, cliccare su `Add` e inserire: `wsock32`
+5. Applicare le modifiche e cliccare `OK`
+
+### 4. Compilazione su diversi sistemi operativi
 
 #### Linux / macOS
 Il progetto è configurato per compilare direttamente con GCC.
