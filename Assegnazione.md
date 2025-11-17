@@ -162,12 +162,10 @@ Il progetto deve essere compatibile con Eclipse CDT e includere i file di config
 
 ## Consegna
 
-- **Scadenza:** 28 novembre 2025, ore 23:59:59
-- **Formato:** link repository GitHub pubblico
-- **Note:**
-  - Una sola consegna per coppia di studenti
-
-
----
-
-**Buon lavoro!**
+- **Scadenza**: xx dicembre 2025, entro h. 23.59.59
+- **Form di prenotazione / consegna**: [link](https://forms.gle/...)
+- **Formato**: Link a repository GitHub accessibile pubblicamente
+- **Note**:
+   - Una sola consegna per coppia. Le coppie non si possono modificare. Al limite i due partecipanti di una coppia possono decidere di effettuare esonero UDP da soli.
+ 
+_Ver. 1.0.0_
