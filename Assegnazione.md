@@ -88,6 +88,20 @@ I formati di output rimangono **identici** al primo esonero:
 5. Visualizza risultato formattato
 6. Chiude socket
 
+**Formato di Output:**
+
+Il client deve visualizzare i risultati con il seguente formato:
+```
+Ricevuto risultato dal server [indirizzo_ip]. [messaggio]
+```
+
+Dove `[messaggio]` varia in base allo status della risposta (vedi sezione "Formati di Output" sopra).
+
+**Esempio di output completo:**
+```
+Ricevuto risultato dal server 127.0.0.1. Roma: Temperatura = 23.5°C
+```
+
 ## Interfaccia Server
 
 **Sintassi:**
@@ -105,6 +119,15 @@ Il server rimane attivo continuamente in ascolto sulla porta specificata. Per og
 3. Genera il valore meteo con le funzioni `get_*()`
 4. Invia risposta al client, usando l'indirizzo acquisito
 5. Continua in ascolto per nuove richieste
+
+**Logging delle Richieste:**
+
+Il server deve stampare a console un log per ogni richiesta ricevuta, includendo l'indirizzo IP del client.
+
+**Esempio di log:**
+```
+Richiesta ricevuta da 127.0.0.1: type='t', city='Roma'
+```
 
 **Note:**
 - Non c'è fase di "connessione" o "accettazione" come in TCP

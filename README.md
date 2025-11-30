@@ -96,6 +96,69 @@ Contiene:
 
 [Protocollo applicativo e istruzioni per la consegna](Assegnazione.md)
 
+## Lavorare con Git
+
+### Workflow Consigliato
+
+Per mantenere il repository sincronizzato e lavorare in modo efficace, si consiglia di seguire questo workflow:
+
+#### 1. Prima di Iniziare a Lavorare
+
+```bash
+git pull
+```
+Scarica le ultime modifiche dal repository remoto. È importante farlo **prima** di iniziare a lavorare per evitare conflitti.
+
+#### 2. Verificare lo Stato del Repository
+
+```bash
+git status
+```
+Mostra i file modificati, aggiunti o eliminati nel working directory.
+
+#### 3. Aggiungere i File Modificati
+
+```bash
+git add <nome-file>
+# oppure per aggiungere tutti i file modificati
+git add .
+```
+
+#### 4. Creare un Commit
+
+```bash
+git commit -m "Descrizione chiara delle modifiche"
+```
+
+**Best Practices per i Messaggi di Commit:**
+- Usare messaggi descrittivi e concisi
+- Descrivere **cosa** è stato modificato e **perché**
+- Esempi:
+  - ✅ `"Implementa ricezione datagrammi UDP nel server"`
+  - ✅ `"Corregge gestione errori in sendto()"`
+  - ❌ `"Update"` (troppo generico)
+  - ❌ `"Fix"` (non specifica cosa è stato corretto)
+
+#### 5. Inviare le Modifiche al Repository Remoto
+
+```bash
+git push
+```
+
+### Frequenza dei Commit
+
+- **Committare frequentemente**: ogni volta che si completa una funzionalità o si risolve un bug
+- **Pushare regolarmente**: almeno una volta al giorno di lavoro
+- **Evitare commit troppo grandi**: meglio tanti piccoli commit che uno enorme
+
+### Lavorare in Coppia
+
+Se l'esonero è svolto in coppia:
+- Comunicare prima di pushare modifiche importanti
+- Fare `git pull` frequentemente per rimanere sincronizzati
+- In caso di conflitti, risolverli insieme
+- Usare branch separati per funzionalità diverse (opzionale ma consigliato)
+
 ## Licenza
 
 Vedere il file [LICENSE](LICENSE) per i dettagli.
