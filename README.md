@@ -28,6 +28,12 @@ Il repository è organizzato in due progetti Eclipse CDT separati:
         └── protocol.h      # Header con definizioni e prototipi
 ```
 
+**⚠️ IMPORTANTE - Struttura del Progetto:**
+- **NON modificare** i nomi dei file esistenti (`main.c`, `protocol.h`)
+- **NON modificare** i nomi delle cartelle esistenti (`client-project`, `server-project`, `src`)
+- **NON modificare** i file di configurazione Eclipse (`.project`, `.cproject`)
+- È possibile **aggiungere nuovi file** se necessario (es. file `.c` o `.h` aggiuntivi)
+
 ## Come Utilizzare il Repository
 
 ### 1. Creare la propria copia del repository

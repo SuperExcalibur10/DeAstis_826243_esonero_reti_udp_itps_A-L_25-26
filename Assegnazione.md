@@ -53,13 +53,19 @@ struct response {
 
 ### Formati di Output
 
-I formati di output rimangono **identici** al primo esonero:
+I formati di output rimangono **identici** al primo esonero.
+
+**IMPORTANTE**: Il formato dell'output deve essere **ESATTAMENTE** come specificato. Messaggio in italiano, senza caratteri extra.
 
 **Successo (`status=0`):**
 - Temperatura: `"NomeCittà: Temperatura = XX.X°C"`
-- Umidità: `"NomeCittà: Umidità = XX.X%"`
+- Umidità: `"NomeCittà: Umidità = XX.X%"` (sono accettate entrambe le grafie: "Umidità" e "Umidita'")
 - Vento: `"NomeCittà: Vento = XX.X km/h"`
 - Pressione: `"NomeCittà: Pressione = XXXX.X hPa"`
+
+**Note sul formato:**
+- I valori devono essere formattati con **una cifra decimale** (es. 23.5, non 23.50 o 23)
+- Il nome della città deve mantenere la capitalizzazione corretta (prima lettera maiuscola)
 
 **Errori:**
 - `status 1`: "Città non disponibile"
@@ -79,6 +85,8 @@ I formati di output rimangono **identici** al primo esonero:
 
 **Note di validazione:**
 - La stringa della richiesta può contenere spazi multipli, ma **non ammette caratteri di tabulazione** (`\t`)
+- Per il parsing della richiesta: il primo carattere specifica il `type`, tutto il resto (dopo lo spazio) è da considerarsi come `city`
+- Esempio: `-r "p Reggio Calabria"` → type='p', city="Reggio Calabria"
 
 **Flusso operativo:**
 1. Analizza argomenti da linea di comando
